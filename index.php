@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<ul>
+<ul class="container">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <a href="<?php the_permalink(); ?>">
       <li class="thumbnail" style="background-image: url(<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);">
@@ -14,5 +14,6 @@
   <?php endwhile; else: ?>
     <p>投稿はありません。</p>
   <?php endif; ?>
+</ul>
   <?php the_posts_pagination(); ?>
   <?php get_footer(); ?>

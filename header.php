@@ -6,5 +6,5 @@
 </head>
 <body>
   <header>
-    <p>header</p>
+    <h1><?php bloginfo('name'); ?></h1>
   </header>
