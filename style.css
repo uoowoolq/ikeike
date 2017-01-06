@@ -15,7 +15,6 @@ Theme Name: Flat
 
 a {
   color: inherit;
-  display: inline-block;
   text-decoration: none;
 }
 
@@ -25,17 +24,26 @@ ul.container {
   /* justify-content: space-around; */
 }
 
-li.thumbnail {
+ul.container li {
   display: inline-block;
+}
+
+a.thumbnail {
+  display: block;
   margin: 1rem;
   position:relative;
   width: 20rem;
   height: 15rem;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: 0.25s ease;
 }
 
-li.thumbnail h2 {
+a.thumbnail:hover {
+  transform: scale(1.2);
+}
+
+a.thumbnail h2 {
   position: absolute;
   bottom: 0;
   padding: 1rem;
