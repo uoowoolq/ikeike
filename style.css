@@ -83,3 +83,5 @@ header nav li::before{
 header nav li:hover::before{
   width: 100%;
 }
+
+/* Responisve */
