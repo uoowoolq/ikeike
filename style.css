@@ -14,6 +14,7 @@ Theme Name: Flat
 }
 
 a {
+  color: inherit;
   display: inline-block;
   text-decoration: none;
 }
@@ -37,6 +38,7 @@ li.thumbnail {
 li.thumbnail h2 {
   position: absolute;
   bottom: 0;
+  padding: 1rem;
   width: 100%;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
@@ -44,4 +46,26 @@ li.thumbnail h2 {
 
 header {
   box-shadow: 1rem 0 1rem silver;
+  padding: 1rem;
+}
+
+header nav li {
+  position: relative;
+  display: inline-block;
+}
+
+header nav li::before{
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0.25rem;
+  background-color: sienna;
+  transition: 0.25s ease;
+}
+
+header nav li:hover::before{
+  width: 100%;
 }
