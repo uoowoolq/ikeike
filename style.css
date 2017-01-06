@@ -7,3 +7,24 @@ Theme Name: Flat
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li.thumbnail {
+  position:relative;
+  width: 20rem;
+  height: 15rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+li.thumbnail h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}

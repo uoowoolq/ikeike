@@ -5,3 +5,6 @@
     <?php wp_head(); ?>
 </head>
 <body>
+  <header>
+    <p>header</p>
+  </header>
