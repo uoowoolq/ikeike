@@ -1,4 +1,11 @@
 <?php get_header(); ?>
+
+<div class="carousel">
+  <div>your content</div>
+  <div>your content</div>
+  <div>your content</div>
+</div>
+
 <ul class="container">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

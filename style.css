@@ -18,6 +18,12 @@ a {
   text-decoration: none;
 }
 
+.carousel {
+  margin: 0 auto;
+  background-color: green;
+  width: 200px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;

@@ -1,3 +1,3 @@
-(function main() {
-  window.alert('test');
-})();
+jQuery(document).ready(function(){
+  jQuery('.carousel').slick();
+});
