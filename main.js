@@ -1,3 +1,7 @@
 jQuery(document).ready(function(){
-  jQuery('.carousel').slick();
+  jQuery('.slick').slick({
+    dots: true,
+    infinite: true,
+    autoplay: true
+  });
 });

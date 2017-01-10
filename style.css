@@ -6,11 +6,21 @@ Theme Name: Flat
   src: url("TanukiMagic.ttf");
 }
 
+@font-face {
+  font-family: "smartfont03";
+  src: url("03スマートフォントUI.otf");
+}
+
+@font-face {
+  font-family: "yasashisaGothic";
+  src: url("07やさしさゴシック.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: TanukiMagic;
+  font-family: yasashisaGothic;
 }
 
 a {
@@ -18,16 +28,42 @@ a {
   text-decoration: none;
 }
 
-.carousel {
+.slick {
+  width: 40rem;
+  height: 20rem;
+  background-color: blue;
   margin: 0 auto;
-  background-color: green;
-  width: 200px;
+}
+
+.slick a {
+  display:block;
+  width: 40rem;
+  height: 20rem;
+  position: relative;
+  background-color: red;
+}
+
+.slick h2 {
+  font-size: 4rem;
+  background-color: beige;
+  position: absolute;
+  left:0;
+  top: 0;
+}
+
+.slick .thumbnail {
+  position: absolute;
+  top: 0;
+  right:0;
+  width:30rem;
+  height: 20rem;
 }
 
 .container {
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
+  justify-content: space-around;
 }
 
 .container li {
@@ -43,7 +79,7 @@ a {
   height: 15rem;
 }
 
-.thumbnail {
+.container .thumbnail {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -51,11 +87,11 @@ a {
   transition: 0.25s ease;
 }
 
-.thumbnail:hover {
+.container a:hover .thumbnail {
   transform: scale(1.2);
 }
 
-.thumbnail~h2 {
+.container .thumbnail~h2 {
   position: absolute;
   bottom: 0;
   padding: 1rem;
@@ -65,8 +101,9 @@ a {
 }
 
 header {
-  box-shadow: 1rem 0 1rem silver;
+  box-shadow: 0 0.5rem 1rem 0 silver;
   padding: 1rem;
+  margin-bottom: 2rem;
 }
 
 header nav li {
@@ -76,13 +113,13 @@ header nav li {
 
 header nav li::before{
   position: absolute;
-  top: 1rem;
+  top: 1.1rem;
   left: 0;
   content: "";
   display: inline-block;
   width: 0;
   height: 0.25rem;
-  background-color: sienna;
+  background-color: silver;
   transition: 0.25s ease;
 }
 

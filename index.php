@@ -1,10 +1,17 @@
 <?php get_header(); ?>
-// special_cat カテゴリーから10件の投稿を取り出します。
-<?php query_posts( 'category_name=special_cat&posts_per_page=3' ); ?>
-<div class="carousel">
-<?php while ( have_posts() ) : the_post(); ?>
-	<div><h2><?php the_title(); ?></h2></div>
-<?php endwhile; ?></div>
+
+<?php $special_query = new WP_Query('category_name=special'); ?>
+<ul class="slick">
+<?php while ( $special_query->have_posts() ) : $special_query->the_post(); ?>
+  <li>
+    <a href="<?php the_permalink(); ?>">
+	<div class="thumbnail" style="background-image: url(<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);"></div>
+  <h2><?php the_title(); ?></h2>
+</a>
+</li>
+<?php endwhile; ?>
+</ul>
+<?php wp_reset_postdata(); ?>
 
 <ul class="container">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -12,12 +19,9 @@
       <li>
         <a href="<?php the_permalink(); ?>">
           <div class="thumbnail" style="background-image: url(<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);"></div>
-      <!-- 投稿のタイトルとパーマリンクを表示 -->
-      <h2><?php the_title(); ?></h2>
-      <!-- 日時を表示 -->
-      <small><?php the_time('F jS, Y'); ?></small>
-      <!-- 投稿の本文をdiv内に表示 -->
-      <?php the_content(); ?>
+      <h2><?php the_title(); ?>
+        <small><?php the_time('F jS, Y'); ?></small>
+      </h2>
       </a>
     </li>
   <?php endwhile; else: ?>
