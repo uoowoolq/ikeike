@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-
+// special_cat カテゴリーから10件の投稿を取り出します。
+<?php query_posts( 'category_name=special_cat&posts_per_page=3' ); ?>
 <div class="carousel">
-  <div>your content</div>
-  <div>your content</div>
-  <div>your content</div>
-</div>
+<?php while ( have_posts() ) : the_post(); ?>
+	<div><h2><?php the_title(); ?></h2></div>
+<?php endwhile; ?></div>
 
 <ul class="container">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
