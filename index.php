@@ -13,6 +13,7 @@
 </ul>
 <?php wp_reset_postdata(); ?>
 
+<h2 class="mascot">新しい記事</h2>
 <ul class="container">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

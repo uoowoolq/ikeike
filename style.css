@@ -21,6 +21,12 @@ Theme Name: Flat
   padding: 0;
   box-sizing: border-box;
   font-family: yasashisaGothic;
+  color: #231815;
+}
+
+body {
+  text-align: center;
+  overflow-y:scroll;
 }
 
 a {
@@ -28,8 +34,94 @@ a {
   text-decoration: none;
 }
 
+
+h1 {
+  margin: 1rem auto;
+  max-width: 40rem;
+}
+
+header {
+  box-shadow: 0 0.5rem 1rem 0 silver;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+header .menu {
+  margin-top: 2rem;
+}
+header .menu > li {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+header .menu > li::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0.25rem;
+  background-color: silver;
+  transition: 0.25s ease;
+}
+
+header .menu > li:hover::before{
+  width: 100%;
+}
+
+header .sub-menu {
+  list-style: none;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  box-shadow: 0 0 1rem 0 grey;
+}
+
+header .sub-menu > li {
+  height: 0;
+  padding: 0 0.5rem;
+  transition: 0.25s;
+  overflow: hidden;
+}
+
+header .menu > li:hover > .sub-menu > li {
+  height: 2rem;
+  padding: 0.5rem 0.5rem;
+  overflow: visible;
+}
+
+h2.mascot {
+  display: inline-block;
+  margin: 8rem 0 auto auto;
+  position: relative;
+  background-color: white;
+  border: solid #231815;
+  padding: 1rem;
+  border-radius: 25rem 2rem 20rem 2rem / 2rem 25rem 2rem 20rem;
+}
+
+h2.mascot:before {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -5rem;
+  display: block;
+  content: "";
+  background-repeat: no-repeat;
+  background-image: url("mascot.svg");
+  background-size: contain;
+  height: 8rem;
+  width: 8rem;
+  z-index: -1;
+}
+
 .slick {
-  width: 40rem;
+  width: 80rem;
+  max-width: 100%;
   height: 20rem;
   background-color: blue;
   margin: 0 auto;
@@ -40,23 +132,42 @@ a {
   width: 40rem;
   height: 20rem;
   position: relative;
-  background-color: red;
+  background-color: white;
 }
 
 .slick h2 {
+  color: orange;
   font-size: 4rem;
-  background-color: beige;
+  font-weight: bold;
   position: absolute;
-  left:0;
-  top: 0;
+  left:1rem;
+  bottom: 1rem;
+  text-shadow: 0.2rem 0.2rem 0.2rem white, -0.2rem -0.2rem 0.2rem white, 0.2rem -0.2rem 0.2rem white, -0.2rem 0.2rem 0.2rem white;
 }
 
 .slick .thumbnail {
   position: absolute;
   top: 0;
   right:0;
-  width:30rem;
+  width:100%;
   height: 20rem;
+  transition: 0.5s;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.slick a:hover .thumbnail {
+  opacity: 0.75;
+}
+
+.slick-prev {
+    z-index: 1;
+    left: 0.5rem;
+}
+
+.slick-next {
+    z-index: 1;
+    right: 0.5rem;
 }
 
 .container {
@@ -99,32 +210,4 @@ a {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
-header {
-  box-shadow: 0 0.5rem 1rem 0 silver;
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
-
-header nav li {
-  position: relative;
-  display: inline-block;
-}
-
-header nav li::before{
-  position: absolute;
-  top: 1.1rem;
-  left: 0;
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0.25rem;
-  background-color: silver;
-  transition: 0.25s ease;
-}
-
-header nav li:hover::before{
-  width: 100%;
-}
-
 /* Responisve */
