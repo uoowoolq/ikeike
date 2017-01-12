@@ -16,3 +16,13 @@ function flat_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'flat_scripts' );
+
+function codex_custom_init() {
+    $args = array(
+      'public' => true,
+      'label'  => 'Books'
+    );
+    register_post_type( 'book', $args );
+}
+
+add_action( 'init', 'codex_custom_init' );

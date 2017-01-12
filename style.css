@@ -34,25 +34,34 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
 
 h1 {
   margin: 1rem auto;
   max-width: 40rem;
 }
 
-header {
-  box-shadow: 0 0.5rem 1rem 0 silver;
+header, footer {
+  box-shadow: 0 0 1rem 0 grey;
   padding: 1rem;
-  margin-bottom: 2rem;
 }
 
-header .menu {
-  margin-top: 2rem;
+footer {
+  margin-top: 3rem;
 }
-header .menu > li {
+
+.menu {
+  margin-top: 1.5rem;
+  font-size: 0;
+}
+
+.menu > li {
+  font-size: 1rem;
   position: relative;
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 header .menu > li::before {
@@ -72,7 +81,7 @@ header .menu > li:hover::before{
 }
 
 header .sub-menu {
-  list-style: none;
+
   background-color: white;
   position: absolute;
   top: 100%;
@@ -109,7 +118,6 @@ h2.mascot:before {
   left: 50%;
   transform: translate(-50%, 0);
   top: -5rem;
-  display: block;
   content: "";
   background-repeat: no-repeat;
   background-image: url("mascot.svg");
@@ -124,20 +132,24 @@ h2.mascot:before {
   max-width: 100%;
   height: 20rem;
   background-color: blue;
-  margin: 0 auto;
+  margin: 2rem auto 0;
+
 }
 
 .slick a {
   display:block;
   width: 40rem;
+  max-width: 100%;
   height: 20rem;
   position: relative;
   background-color: white;
 }
 
 .slick h2 {
-  color: orange;
-  font-size: 4rem;
+  width: 38rem;
+  max-width: 90%;
+  color: darkorange;
+  font-size: 2rem;
   font-weight: bold;
   position: absolute;
   left:1rem;
@@ -210,4 +222,140 @@ h2.mascot:before {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+article {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+article p {
+  text-align: left;
+}
+
+article figcaption {
+  font-weight: bold;
+}
+
+article h2, h3, article small, article p, article dl {
+  margin: 1rem;
+}
+
+article h2 {
+  margin-top: 3rem;
+}
+
+article .attachment-post-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+article dl {
+  margin-top: 3rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 1rem 0 grey;
+  background-color: AntiqueWhite;
+}
+
+article dt {
+  clear: left;
+  float: left;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+article p:first-of-type {
+  margin-top: 3rem;
+}
+
+article dd {
+  margin: 0.5rem;
+  border-bottom: dashed 1px;
+}
+
+article dl dt:first-of-type {
+  margin-top: 0.5rem;
+}
+
+article a[rel="tag"] {
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: orangered;
+    border-radius: 1rem;
+    position: relative;
+}
+
+article a[href*="washoku"] {
+  background-color: darkorange;
+}
+
+article a[href*="izakaya"] {
+  background-color: coral;
+}
+
+article a[href*="lanch"] {
+  background-color: yellow;
+  color: #a0522d;
+}
+
+article a[href*="katariai"] {
+  background-color: seagreen;
+}
+
+article a[href*="date"] {
+  background-color: hotpink;
+}
+
+article a[href*="okigaru"] {
+  background-color: orange;
+}
+
+article a[href*="enkai"] {
+  background-color: orangered;
+}
+
+article a[href*="ekichika"] {
+  background-color: lightseagreen;
+}
+
+article a[href*="kyujin"] {
+  background-color: magenta;
+}
+
+.scroll-to-top {
+  cursor: pointer;
+  margin: 0 auto;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  background-color: white;
+  border: solid #231815;
+  border-radius: 50%;
+}
+
+.ticket {
+  display: inline-block;
+  box-shadow: 0 0 1rem 0 grey;
+  padding: 1rem;
+  margin: 2rem;
+  transition: 0.25s ease;
+  font-weight: bold;
+}
+
+.ticket img {
+  vertical-align:middle;
+  width: 4rem;
+  height: auto;
+}
+
+.ticket span {
+  vertical-align:middle;
+}
+
+.ticket:hover {
+  transform: scale(1.1);
+}
+
 /* Responisve */

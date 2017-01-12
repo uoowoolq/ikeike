@@ -21,7 +21,7 @@
         <a href="<?php the_permalink(); ?>">
           <div class="thumbnail" style="background-image: url(<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0]; ?>);"></div>
       <h2><?php the_title(); ?>
-        <small><?php the_time('F jS, Y'); ?></small>
+        <small><?php the_date(); ?></small>
       </h2>
       </a>
     </li>
