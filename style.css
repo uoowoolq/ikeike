@@ -22,11 +22,20 @@ Theme Name: Flat
   box-sizing: border-box;
   font-family: yasashisaGothic;
   color: #231815;
+  border-color: #231815;
 }
 
 body {
   text-align: center;
-  overflow-y:scroll;
+  overflow-y: scroll;
+  position: relative;
+  height: 100%;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
 }
 
 a {
@@ -39,8 +48,8 @@ ul {
 }
 
 h1 {
-  margin: 1rem auto;
-  max-width: 40rem;
+  margin: 4rem auto 2rem auto;
+  max-width: 30rem;
 }
 
 header, footer {
@@ -49,12 +58,34 @@ header, footer {
   /* background-color: oldlace; */
 }
 
+.sns {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.sns li {
+  display: inline-block;
+}
+
+.sns a {
+  vertical-align: bottom;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}
+
+#menu-top {
+  display: inline-block;
+  border-top: dashed 1px;
+}
+
 footer {
-  margin-top: 3rem;
+  margin-top: 2rem;
+  width: 100%;
 }
 
 .menu {
-  margin-top: 1.5rem;
   font-size: 0;
 }
 
@@ -110,7 +141,7 @@ h2.mascot {
   margin: 8rem 0 auto auto;
   position: relative;
   background-color: white;
-  border: solid #231815;
+  border: solid;
   padding: 1rem;
   border-radius: 25rem 2rem 20rem 2rem / 2rem 25rem 2rem 20rem;
 }
@@ -149,6 +180,7 @@ h2.mascot:before {
   font-weight: bold;
   position: absolute;
   margin: 1.5rem;
+  max-width: 30rem;
   transform: rotate(-5deg);
   text-shadow: 0.1rem 0.1rem 0.1rem white, -0.1rem -0.1rem 0.1rem white, 0.1rem -0.1rem 0.1rem white, -0.1rem 0.1rem 0.1rem white,  0.1rem 0 0.1rem white, 0 -0.1rem 0.1rem white, 0 0.1rem 0.1rem white, -0.1rem 0 0.1rem white;
 }
@@ -185,16 +217,17 @@ h2.mascot:before {
 }
 
 .slick-prev {
-    z-index: 1;
-    left: 0.5rem;
+  z-index: 1;
+  left: 0.5rem;
 }
 
 .slick-next {
-    z-index: 1;
-    right: 0.5rem;
+  z-index: 1;
+  right: 0.5rem;
 }
 
 .container {
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -214,8 +247,8 @@ h2.mascot:before {
 }
 
 .container .thumbnail {
-  width: 16rem;
-  height: 12rem;
+  width: 12rem;
+  height: 9rem;
   background-repeat: no-repeat;
   background-size: cover;
   float: left;
@@ -233,8 +266,20 @@ h2.mascot:before {
   margin-top: 2rem;
 }
 
+html {
+  height: 100%;
+  font-size: 70%;
+}
 /* Responisve */
-@media screen and (min-width:721px) {
+@media screen and (min-width:480px), print {
+  html {
+    font-size: 80%;
+  }
+}
+@media screen and (min-width:721px), print {
+  html {
+    font-size: 100%;
+  }
   .container li {
     padding: 0;
     width: auto;
@@ -288,12 +333,16 @@ article figcaption {
   font-weight: bold;
 }
 
-article h2, h3, article small, article p, article dl {
+article h2, h3, article p, article dl {
   margin: 1rem;
 }
 
 article h2 {
   margin-top: 3rem;
+}
+
+article h3 {
+  color: saddlebrown;
 }
 
 article .attachment-post-thumbnail {
@@ -329,61 +378,45 @@ article dl dt:first-of-type {
 }
 
 article a[rel="tag"] {
-    display: inline-block;
-    color: white;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    background-color: orangered;
-    border-radius: 1rem;
-    position: relative;
-}
-
-article a[href*="washoku"] {
-  background-color: darkorange;
-}
-
-article a[href*="izakaya"] {
-  background-color: coral;
-}
-
-article a[href*="lanch"] {
-  background-color: yellow;
-  color: #a0522d;
-}
-
-article a[href*="katariai"] {
-  background-color: seagreen;
-}
-
-article a[href*="date"] {
-  background-color: hotpink;
-}
-
-article a[href*="okigaru"] {
-  background-color: orange;
-}
-
-article a[href*="enkai"] {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin: 0.5rem;
   background-color: orangered;
-}
-
-article a[href*="ekichika"] {
-  background-color: lightseagreen;
-}
-
-article a[href*="kyujin"] {
-  background-color: magenta;
+  border-radius: 1rem;
+  position: relative;
 }
 
 .scroll-to-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
   cursor: pointer;
-  margin: 0 auto;
-  width: 3rem;
-  height: 3rem;
-  padding: 0.5rem;
-  border: solid #231815;
+}
+
+.scroll-to-top::before {
+  z-index: -1;
+  position: absolute;
+  left: -1rem;
+  top: -2rem;
+  content: "";
+  background-color: rgba(127, 127, 127, 0.5);
   border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.scroll-to-top::after {
+  position: absolute;
+  left: 0;
+  top: -1rem;
+  content: "";
+  border: solid;
+  width: 2rem;
+  height: 2rem;
+  border-width: 1px 0 0 1px;
+  transform: rotate(45deg);
 }
 
 .ticket {
@@ -407,4 +440,15 @@ article a[href*="kyujin"] {
 
 .ticket:hover {
   transform: scale(1.1);
+}
+
+.share {
+  margin: 0.5rem;
+}
+
+.share li {
+  display: inline-block;
+}
+.share iframe {
+  vertical-align: bottom;
 }

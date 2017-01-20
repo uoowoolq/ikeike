@@ -2,9 +2,18 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <?php $custom_fields = get_post_custom(); ?>
   <article>
+
     <h2 class="mascot"><a href="<?php the_permalink(); ?>"><?php echo $custom_fields['店名'][0] ?></a></h2>
     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-    <small><?php the_date(); ?></small><br/>
+    <small>投稿日: <?php the_date(); ?></small>
+
+    <!-- Share buttons -->
+    <ul class="share">
+      <li><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></li>
+      <li><div class="line-it-button" data-lang="ja" data-type="share-a" data-url="http://aaa" style="display: none;"></div></li>
+      <li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a></li>
+    </ul>
+
     <small><?php the_tags('',''); ?></small>
     <figure><?php the_post_thumbnail(); ?>
       <figcaption><?php echo $custom_fields['キャッチフレーズ'][0] ?></figcaption>
